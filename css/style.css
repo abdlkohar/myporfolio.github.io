@@ -4,12 +4,13 @@ html {
 
 
 body {
-	margin-bottom: 100px;
+	margin-bottom: 200px;
 }
 
 .jumbotron img {
-	width: 200px;
-	border: 5px solid #666;
+	width: 300px;
+	margin-top: 25px;
+	
 }
 
 
@@ -22,7 +23,8 @@ hr {
 
 
 section {
-	min-height: 600px;
+	min-height: 300px;
+
 }
 
 
@@ -31,7 +33,8 @@ section {
 }
 
 .contact {
-	min-height: 800px;
+	min-height: 400px;
+	
 }
 
 
@@ -51,4 +54,3 @@ footer {
 	font-size: 0.9;
 	padding-top: 30px;
 }
-
