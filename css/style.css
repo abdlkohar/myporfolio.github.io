@@ -5,12 +5,27 @@ html {
 
 body {
 	margin-bottom: 120px;
+	margin-top: 30px;
+}
+
+
+.jumbotron {
+	height: 500px;
+	background-image: url('..//img/header-bg.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 0 -60px;
+	color: #eaeaea;
 }
 
 .jumbotron img {
 	width: 300px;
-	margin-top: 25px;
-	
+	border: 5px solid #eaeaea;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.jumbotron h1, .jumbotron p {
+	text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }
 
 
@@ -22,8 +37,8 @@ hr {
 
 
 
-section{
-	height: 600px;
+section {
+	min-height: 300px;
 
 }
 
@@ -33,7 +48,8 @@ section{
 }
 
 .contact {
-	min-height: 800px;
+	min-height: 600px;
+	margin-top: 50px;
 	
 }
 
@@ -48,7 +64,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 120%;
-	height: 100px;
+	height: 80px;
 	background-color: #666;
 	color: #aaa;
 	padding-top: 30px;
