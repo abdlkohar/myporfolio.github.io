@@ -32,11 +32,16 @@
 
           <a href="#home" class="navbar-brand" class="page-scroll">Abdul Kohar</a>
         </div>
+
+
+
+
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about" class="page-scroll">About</a></li>
-            <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
+            <li><a href="#about" class="page-scroll">About</li></a>
+            <li><a href="#portfolio" class="page-scroll">Portfolio</li></a>
             <li><a href="#contact" class="page-scroll">Contact Us</a></li>
+          <ul>
         </ul>
       </div>
     </nav>
@@ -52,7 +57,7 @@
 
     <!-- jumbotron -->
     <div class="jumbotron text-center">
-      <img src="img/jumbotron.jpg" alt="" class="img-circle">
+      <img src="img/jumbotron.jpg" class="img-circle">
       <h1>Abdul Kohar</h1>
       <p>Student | Web Programming</p>
     </div>
@@ -144,35 +149,24 @@
         </div>
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
-            <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong>Terimakasih!</strong> Pesan telah diterima.
-            </div>
-            <form name="form-contact">
+            <form>
               <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" id="nama" class="form-control" placeholder="Masukan Nama" name="nama"/>
+                <input type="text" id="nama" class="form-control" placeholder="Masukan Nama">
               </div>
                <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="nama" class="form-control" placeholder="Email" name="email"/>
+                <input type="email" id="nama" class="form-control" placeholder="Email">
               </div>
                <div class="form-group">
                 <label for="telp">No Telephon</label>
-                <input type="telp" id="nama" class="form-control" placeholder="No Telephon" name="no telephon"/>
+                <input type="telp" id="nama" class="form-control" placeholder="No Telephon">
               </div>
               <div class="form-group">
                 <label for="pesan">Pesan</label>
-                <textarea class="form-control" rows="10" placeholder="Masukkan Pesan" name="pesan"></textarea>
+                <textarea class="form-control" rows="10" placeholder="Masukkan Pesan"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-kirim" >Kirim Pesan</button>
-
-
-              <button type="submit" class="btn btn-primary d-none" disabled>
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                loading...
-              </button>
-
+              <button type="submit" class="btn btn-primary">Kirim Pesan</button>
             </form>
           </div>
         </div>
@@ -188,20 +182,12 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-sm-12">
-             <a href="https://m.facebook.com/abdulkohar.kohar.359">
-               <img src="img/facebook.png">
-            </a>
-            <a href="https:/www.instagram.com/akohar27">
-               <img src="img/linkedin.png">
-            </a>
-          </div>
+          <p>&copy; 2021 | created. <a href="https://instagram.com/akohar27">Abdul kohar</p></a>
+        </div>
        </div>
        <div class="row">
-         <div class="col-sm-12">
-          <p>&copy; 2021 | Abdul Kohar </p> 
-           
-         </div>
-       </div>
+          <div class="col-sm-12">
+          <p>inded. <a href="https://www.linkedin.com/in/abdul-kohar-0a9ba1a0">Abdul kohar</p></a>
       </div>
     </footer>
     <!-- akhir footer -->
@@ -221,18 +207,5 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script src="js/script.js"></script>
-
-
-    <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxNbPjHEDdVsoG2P-Elxygalj2u6ykDBJUbje1w2sw8i8Z_JV3uzRpGZSZItKRv99Q/exec'
-  const form = document.forms['form-contact'];
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
   </body>
 </html>
