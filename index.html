@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -143,28 +143,34 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-5">
-            <form>
+           <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                <strong>Berhasil!</strong> Pesan telah terkirim.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <form name="portfolio-form-contact">
             <div class="mb-3">
-              <label for="name" class="form-label">Nama Lengkap</label>
-              <input type="text" class="form-control" id="name" aria-describedby="name">
-            </div>
-             <div class="mb-3">
-              <label for="alamat" class="form-label">Alamat</label>
-              <input type="text" class="form-control" id="alamat" aria-describedby="alamat">
+              <label for="name" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" placeholder="Masukkan Nama"/>
             </div>
              <div class="mb-3">
               <label for="notel" class="form-label">No Telephon</label>
-              <input type="notel" class="form-control" id="notel" aria-describedby="notel">
+              <input type="notel" class="form-control" id="notel" aria-describedby="notel" name="no telephon"/>
             </div>
              <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" aria-describedby="email">
+              <input type="email" class="form-control" id="email" aria-describedby="email" name="email"/>
             </div>
             <div class="mb-3">
              <label for="pesan" class="form-label">Pesan</label>
-              <textarea class="form-control" id="pesan" rows="3"></textarea>
+              <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Kirim</button>
+            <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+              <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+              Loading...
+
+            </button>
            </form>
           </div>
         </div>
@@ -178,8 +184,9 @@
 
     <!-- footer -->
     <footer class="bg-primary text-white pb-5">
-      <p class="text-center">Created  | <a href="https://www.instagram.com/akohar27/" class="text-white fw-bold">Abdul Kohar</a></p>
-      <i class="fa fa-coffee fa-4x"></i>
+      <p class="text-center">Created 
+        <p a href="https://www.instagram.com/akohar27/"  class="text-white fw-bold text-center">Abdul Kohar</a></p>
+      </p>
     </footer>
     <!-- penutup footer -->
 
@@ -201,16 +208,37 @@
 
     
     <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxNbPjHEDdVsoG2P-Elxygalj2u6ykDBJUbje1w2sw8i8Z_JV3uzRpGZSZItKRv99Q/exec'
-  const form = document.forms['form-contact'];
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzOxmIyTM9iNLAqemivSbMf9af0IcYQycWmO5hfeg5KwfrEY8RLst9sfx6QAHRWnxGv/exec'
+      const form = document.forms['portfolio-form-contact'];
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.my-alert');
+      
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+
+
+
+        form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // saat di klik
+        // tampilan loading
+
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            //my alert
+             myAlert.classList.toggle('d-none');
+            // riset
+            form.reset();
+            console.log('Success!', response);
+        })
+          .catch(error => console.error('Error!', error.message));
+      });
+  </script>
 
    
   </body>
